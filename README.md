@@ -11,14 +11,14 @@ To test:
 
 An error message should be displayed mentioning something like this:
 
->  The "for_each" map includes keys derived from resource attributes that cannot be determined until apply, and so Terraform cannot determine the full set
-> │ of keys that will identify the instances of this resource.
-> │
-> │ When working with unknown values in for_each, it's better to define the map keys statically in your configuration and place apply-time results only in
-> │ the map values.
-> │
-> │ Alternatively, you could use the -target planning option to first apply only the resources that the for_each value depends on, and then apply a second
-> │ time to fully converge.
+> The "for_each" map includes keys derived from resource attributes that cannot be determined until apply, and so Terraform cannot determine the full set
+> of keys that will identify the instances of this resource.
+
+> When working with unknown values in for_each, it's better to define the map keys statically in your configuration and place apply-time results only in
+> the map values.
+
+> Alternatively, you could use the -target planning option to first apply only the resources that the for_each value depends on, and then apply a second
+> time to fully converge.
 
 This is unexpected as the "depends" on should assure that a resource is deployed before proceeding on to the next.
 
